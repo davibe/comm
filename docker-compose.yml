@@ -1,0 +1,18 @@
+rabbitmq:
+  image: rabbitmq:3-management
+  hostname: rabbitmq
+  ports: [5672]
+  environment:
+    - RABBITMQ_ERLANG_COOKIE=some_secret_cookie
+    - RABBITMQ_NODENAME=rabbitmq
+
+test:
+  build: .
+  links: ["rabbitmq"]
+  volumes:
+    - .:/data
+    - /data/node_modules
+  environment:
+    - RABBITMQ_URL=amqp://rabbitmq:5672//?heartbeat=10
+    - NODE_ENV=development
+  command: bash -c "sleep 4 && npm run test"

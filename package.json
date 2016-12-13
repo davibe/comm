@@ -1,0 +1,17 @@
+{
+  "name": "comm",
+  "version": "0.0.1",
+  "description": "microservice communication library",
+  "main": "index.js",
+  "dependencies": {
+    "amqp-as-promised": "^4.1.0",
+    "mocha": "^3.2.0",
+    "serialize-error": "^2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha --harmony"
+  },
+  "author": "Davide Bertola <dade@dadeb.it>",
+  "license": "ISC"
+}
