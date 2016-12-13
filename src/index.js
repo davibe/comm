@@ -54,11 +54,10 @@ const call = async (serviceName, methodName, ...args) => {
 
 const activateGracefulShutdown = () => {
   const gracefulShutdown = async (opts) => {
-    console.log('shutting down')
-    await amqpc.shutdown()
-    process.exit(0)
+    console.log('comm is shutting down')
     // if not connected amqpc hangs .shutdown() indefinitely, so..
-    await new Promise(res => setTimeout(res, 2000))
+    setTimeout(() => process.exit(0), 2000)
+    await amqpc.shutdown()
     process.exit(0)
   }
 
