@@ -10,8 +10,9 @@ Simple microservice communication library based on 'amqp-as-promised'
 
 ### Example
 
-Microservices below will connect to rabbit mq at "amqp://localhost:5672//?heartbeat=10"
-They can be launched with node 7 with --harmony option
+Microservices below will connect to RabbitMQ at "amqp://localhost:5672//?heartbeat=10".
+
+They can be launched using node 7 with --harmony option
 
 
 #### service1.js
