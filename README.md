@@ -41,6 +41,6 @@ if (!process.parent) { main() }
 
 ### Tests
 
-```javascript
+```bash
 docker-compose stop -t1; docker-compose rm -f ; docker-compose build ; docker-compose up test
 ```
